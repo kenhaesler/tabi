@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="de" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Japan in deinem Tempo: Orte entdecken, Route und Nächte planen, Tage und Unterkünfte gestalten.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f3ec">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#11181c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="tabi">
+<title>tabi · Japan in deinem Tempo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://thumb.wikimedia.org" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>@layer legacy, app;</style>
+<link rel="stylesheet" href="css/legacy.css">
+<link rel="stylesheet" href="css/app.css">
+<script>
+/* Theme + motion before first paint, so there is no flash. */
+(function(){var d=document.documentElement;try{d.dataset.theme=localStorage.getItem('tabi-theme')||'auto';d.dataset.reduceMotion=String(localStorage.getItem('tabi-reduce-motion')==='true');}catch(e){}})();
+</script>
+<script src="assets.js"></script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true">
+ <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.8 8.2-2.1 5.5-5.5 2.1 2.1-5.5Z"/></symbol>
+ <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></symbol>
+ <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18.5" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><path d="M8.5 18.5h8a3.3 3.3 0 0 0 0-6.6h-9a3.3 3.3 0 0 1 0-6.6h8"/></symbol>
+ <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2.5 5v14M2.5 9h16a3 3 0 0 1 3 3v7M2.5 15.5h19"/><path d="M6.5 9V7.5"/><circle cx="7" cy="12" r="1.6"/></symbol>
+ <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+ <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+ <symbol id="i-share" viewBox="0 0 24 24"><path d="M4.5 12.5v6a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-6M16 7l-4-4-4 4M12 3v12.5"/></symbol>
+ <symbol id="i-download" viewBox="0 0 24 24"><path d="M20.5 15v3.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V15M7 10l5 5 5-5M12 15V3.5"/></symbol>
+ <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18.5" cy="12" r="1.3"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+ <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></symbol>
+ <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17a8.5 8.5 0 0 0 0-17Z" fill="currentColor" stroke="none"/></symbol>
+ <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 16.5v-5M12 8h.01"/></symbol>
+ <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+ <symbol id="i-fit" viewBox="0 0 24 24"><path d="M3.5 8V5.5a2 2 0 0 1 2-2H8M16 3.5h2.5a2 2 0 0 1 2 2V8M20.5 16v2.5a2 2 0 0 1-2 2H16M8 20.5H5.5a2 2 0 0 1-2-2V16"/><path d="M8.5 15.5 11 9l2.5 4 2-2.5"/></symbol>
+ <symbol id="i-globe" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3.5 4v4.5H8"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></symbol>
+ <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3.5h10V9M7 17.5H5a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v6.5H7z"/></symbol>
+ <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3.5 1.8 5.2a2 2 0 0 0 1.2 1.2l5.2 1.8-5.2 1.8a2 2 0 0 0-1.2 1.2L12 20l-1.8-5.3a2 2 0 0 0-1.2-1.2L3.8 11.7 9 9.9a2 2 0 0 0 1.2-1.2Z"/></symbol>
+ <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8.5a5.5 5.5 0 1 1 5.3-7H15a3.5 3.5 0 1 1 2.5 7Z"/></symbol>
+</svg>
+
+<a class="skip-link" href="#workspace">Zum Reiseplaner springen</a>
+
+<header class="app-header">
+ <a class="brand" href="#/entdecken" aria-label="tabi · Japan in deinem Tempo"><span class="brand-mark" aria-hidden="true">旅</span><span class="brand-name">tabi</span></a>
+ <nav class="main-nav" aria-label="Hauptnavigation">
+  <button data-view="discover" class="active" aria-current="page"><svg class="i"><use href="#i-compass"/></svg><span>Entdecken</span></button>
+  <button data-view="route"><svg class="i"><use href="#i-route"/></svg><span>Meine Route</span><span class="nav-badge" data-route-count></span></button>
+  <button data-view="stays"><svg class="i"><use href="#i-bed"/></svg><span>Aufenthalte</span></button>
+ </nav>
+ <div class="header-actions">
+  <button id="overviewBtn" class="button quiet" title="Reiseüberblick"><svg class="i"><use href="#i-list"/></svg><span class="label">Überblick</span></button>
+  <button id="exportBtn" class="button primary" title="PDF herunterladen"><svg class="i"><use href="#i-download"/></svg><span class="label">PDF</span></button>
+  <button class="icon-button" id="menuBtn" popovertarget="appMenu" aria-label="Weitere Optionen"><svg class="i"><use href="#i-more"/></svg></button>
+ </div>
+</header>
+
+<div id="appMenu" class="app-menu" popover>
+ <button class="menu-item" data-open-trip><svg class="i"><use href="#i-sliders"/></svg>Reisedaten &amp; Vorlieben</button>
+ <button class="menu-item" id="shareBtn"><svg class="i"><use href="#i-share"/></svg>Route teilen</button>
+ <div class="menu-theme" role="group" aria-label="Farbschema">
+  <span>Darstellung</span>
+  <div class="segmented">
+   <button data-theme-choice="auto" aria-label="Automatisch"><svg class="i"><use href="#i-auto"/></svg></button>
+   <button data-theme-choice="light" aria-label="Hell"><svg class="i"><use href="#i-sun"/></svg></button>
+   <button data-theme-choice="dark" aria-label="Dunkel"><svg class="i"><use href="#i-moon"/></svg></button>
+  </div>
+ </div>
+ <button class="menu-item" data-open-welcome><svg class="i"><use href="#i-sparkle"/></svg>Einführung ansehen</button>
+ <button class="menu-item" data-open-notes><svg class="i"><use href="#i-info"/></svg>Datenquellen &amp; Hinweise</button>
+</div>
+
+<div class="trip-bar" role="region" aria-label="Deine Reise auf einen Blick">
+ <div class="trip-bar-inner">
+  <button class="trip-chip" data-open-trip aria-label="Reisedaten und Vorlieben ändern"><svg class="i"><use href="#i-calendar"/></svg><strong id="chipDates">–</strong><span id="chipNights"></span></button>
+  <button class="trip-chip nights-chip" id="nightsChip" data-view="route" aria-label="Verteilte Nächte"><span class="meter" aria-hidden="true"><i></i></span><strong id="chipAssigned">–</strong><span id="chipAssignedLabel">verteilt</span></button>
+  <button class="trip-chip season-chip" id="seasonBtn" aria-label="Reisezeit und Wetter"><span class="season-chip-art" id="seasonChipArt" aria-hidden="true"></span><strong id="seasonChipText">Reisezeit</strong><span id="seasonChipTemp"></span></button>
+  <div class="trip-savebar" aria-label="Speicherstatus">
+   <button type="button" class="save-chip" id="saveChip"><span class="save-dot" aria-hidden="true"></span><span id="saveChipText">Wird geladen</span></button>
+   <p id="saveStatus" class="sr-only" aria-live="polite">Gespeicherte Reise wird geladen …</p>
+   <button id="retrySaveBtn" class="text-button" hidden>Erneut speichern</button>
+   <button id="reloadCloudBtn" class="text-button" hidden>Gespeicherten Stand laden</button>
+   <button id="recoverDraftBtn" class="text-button" hidden>Entwurf wiederherstellen</button>
+  </div>
+ </div>
+ <div id="seasonSummary" class="season-summary" hidden></div>
+</div>
+
+<main id="main" data-planning-stage="route">
+ <h1 class="sr-only">tabi · Japan, in deinem Tempo</h1>
+ <div class="workspace" id="workspace" data-view="discover">
+  <aside class="discover-pane" aria-labelledby="discoverHeading">
+   <header class="pane-head">
+    <div><h2 id="discoverHeading" tabindex="-1">Orte entdecken</h2><p class="pane-sub"><span id="resultCount">–</span> · kuratiert für ruhiges Reisen</p></div>
+   </header>
+   <div class="discover-tools">
+    <label class="search"><svg class="i"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Ort oder Erlebnis suchen" aria-label="Ort oder Erlebnis suchen" autocomplete="off" enterkeyhint="search"><kbd class="search-kbd" aria-hidden="true">/</kbd></label>
+    <div class="filters" role="group" aria-label="Ortsfilter"><button class="active" data-filter="all">Alle</button><button data-filter="culture">Kultur</button><button data-filter="nature">Natur</button><button data-filter="onsen">Onsen</button><button data-filter="quiet">Abseits</button></div>
+    <label class="mobile-filter-control" hidden>Ortsfilter<select id="mobilePlaceFilter"><option value="all">Alle Orte</option><option value="quiet">Abseits der Klassiker</option><option value="nature">Natur</option><option value="culture">Kultur</option><option value="onsen">Onsen</option></select></label>
+   </div>
+   <div id="places" class="places"></div>
+  </aside>
+
+  <section class="map-pane" aria-label="Interaktive Japankarte">
+   <div class="map-wrap"><svg id="japanMap" viewBox="0 0 720 660" role="group" aria-label="Japan mit auswählbaren Reisezielen. Mit den Pfeiltasten verschieben, mit Plus und Minus zoomen." tabindex="0"><defs><radialGradient id="seaGlow" cx="55%" cy="45%" r="70%"><stop offset="0" class="sea-stop-a"/><stop offset="1" class="sea-stop-b"/></radialGradient><pattern id="waterDots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" class="water-dot"/></pattern></defs><rect x="-2000" y="-2000" width="4720" height="4660" fill="url(#seaGlow)"/><rect x="-2000" y="-2000" width="4720" height="4660" fill="url(#waterDots)"/><g id="land"></g><g class="geographic-labels" aria-hidden="true"><text x="250" y="225" class="sea-label">JAPANISCHES MEER</text><text x="575" y="520" class="sea-label">PAZIFIK</text><text x="560" y="130">HOKKAIDO</text><text x="318" y="418">SHIKOKU</text><text x="190" y="455">KYUSHU</text></g><g id="routeLines"></g><g id="mapHover" aria-hidden="true"></g><g id="mapPins"></g></svg></div>
+   <div class="map-controls" role="toolbar" aria-label="Kartensteuerung">
+    <button id="zoomIn" class="icon-button" aria-label="Karte vergrößern"><svg class="i"><use href="#i-plus"/></svg></button>
+    <button id="zoomOut" class="icon-button" aria-label="Karte verkleinern"><svg class="i"><use href="#i-minus"/></svg></button>
+    <button id="mapFit" class="icon-button" aria-label="Auf deine Route zoomen"><svg class="i"><use href="#i-fit"/></svg></button>
+    <button id="mapReset" class="icon-button" aria-label="Ganz Japan anzeigen"><svg class="i"><use href="#i-globe"/></svg></button>
+   </div>
+   <p class="map-hint" id="mapHint">Ziehen zum Verschieben · Scrollen oder zwei Finger zum Zoomen</p>
+   <div class="map-peek" id="mapPeek" hidden></div>
+  </section>
+
+  <aside class="route-pane" aria-labelledby="routeHeading">
+   <header class="pane-head">
+    <div><h2 id="routeHeading" tabindex="-1">Meine Route</h2><p class="pane-sub" id="routeDates"></p></div>
+    <div class="pane-tools"><button id="undoBtn" class="icon-button" aria-label="Rückgängig" title="Rückgängig" disabled><svg class="i"><use href="#i-undo"/></svg></button><button id="clearBtn" class="text-button">Leeren</button></div>
+   </header>
+   <div class="demo-banner" id="demoBanner" hidden><svg class="i"><use href="#i-sparkle"/></svg><p><strong>Beispielroute</strong> · zum Ausprobieren. Passe sie an oder beginne neu.</p><button class="text-button" data-demo-clear>Neu beginnen</button></div>
+   <div class="route-totals" id="routeTotals"></div>
+   <p class="sr-only" id="dragHelp">Am Griff ziehen oder Griff fokussieren und Pfeiltasten nutzen. Escape bricht das Ziehen ab.</p>
+   <div id="routeList" class="route-list"></div>
+   <div id="routeBalance" class="route-balance" role="status"></div>
+   <details class="quality-hints" id="qualityHints" hidden><summary>Hinweise zu deinem Reisetempo</summary><p>Redaktionelle Planungshilfe. Passe die Auswahl an deine Bedürfnisse an.</p><ul id="qualityHintsList"></ul></details>
+   <details class="day-plan-section" id="dayPlanSection"><summary><span>Tagesplan</span><span class="count" data-day-count>0 Erlebnisse</span></summary><div id="dayItemsList"></div></details>
+   <div class="route-footer">
+    <button id="toStaysBtn" class="button primary next-step" data-planning-stage="stays">Weiter: Aufenthalte gestalten<svg class="i"><use href="#i-arrow"/></svg></button>
+    <button id="demoBtn" class="text-button">Beispielroute laden</button>
+   </div>
+  </aside>
+ </div>
+
+ <section id="stayPlanner" class="stay-planner" hidden aria-labelledby="stayPlannerHeading">
+  <header class="stay-intro"><div><h2 id="stayPlannerHeading" tabindex="-1">Aufenthalte gestalten</h2><p>Ort für Ort: Tage planen, Unterkunft wählen, Aufenthalt prüfen.</p></div><button class="button outline" data-planning-stage="route"><svg class="i"><use href="#i-route"/></svg>Route bearbeiten</button></header>
+  <div id="stayPlannerContent"></div>
+ </section>
+</main>
+
+<nav class="mobile-tabs" aria-label="Ansicht">
+ <button data-view="discover" class="active" aria-current="page"><svg class="i"><use href="#i-compass"/></svg><span>Entdecken</span></button>
+ <button data-view="map"><svg class="i"><use href="#i-map"/></svg><span>Karte</span></button>
+ <button data-view="route"><svg class="i"><use href="#i-route"/></svg><span>Route</span><span class="nav-badge" data-route-count></span></button>
+ <button data-view="stays"><svg class="i"><use href="#i-bed"/></svg><span>Aufenthalte</span></button>
+</nav>
+
+<dialog id="detailDialog" class="detail-dialog sheet" aria-labelledby="destination-title"><button class="dialog-close icon-button" data-close aria-label="Details schließen"><svg class="i"><use href="#i-x"/></svg></button><div id="detailContent"></div></dialog>
+<dialog id="seasonDialog" class="info-dialog sheet" aria-label="Reisezeit"><button class="dialog-close icon-button" data-close aria-label="Reisezeit schließen"><svg class="i"><use href="#i-x"/></svg></button><div id="seasonContent"></div></dialog>
+<dialog id="overviewDialog" class="overview-dialog sheet" aria-label="Reiseüberblick"><button class="dialog-close icon-button" data-close aria-label="Überblick schließen"><svg class="i"><use href="#i-x"/></svg></button><div id="overviewContent"></div></dialog>
+
+<dialog id="tripDialog" class="trip-dialog sheet" aria-labelledby="tripDialogTitle">
+ <button class="dialog-close icon-button" data-close aria-label="Schließen"><svg class="i"><use href="#i-x"/></svg></button>
+ <div class="sheet-body">
+  <h2 id="tripDialogTitle" tabindex="-1">Deine Reise</h2>
+  <p class="sheet-intro">Zeitraum und Reisestil. Deine Route bleibt beim Ändern erhalten.</p>
+  <section class="sheet-section" aria-labelledby="datesHeading">
+   <h3 id="datesHeading">Reisezeitraum</h3>
+   <form id="dateForm" class="date-form"><label>Ankunft<input id="startDate" type="date" value="2026-11-01" required></label><span class="date-arrow" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span><label>Abreise<input id="endDate" type="date" value="2026-11-15" required></label><button class="sr-only" type="submit" tabindex="-1">Zeitraum übernehmen</button></form>
+   <p id="dateError" class="error" role="alert" hidden></p>
+  </section>
+  <form id="preferencesForm" class="prefs-form">
+   <section class="sheet-section" aria-labelledby="paceHeading">
+    <h3 id="paceHeading">Reisetempo</h3>
+    <label class="sr-only" for="pacePreference">Dein Reisetempo</label>
+    <select id="pacePreference"><option value="relaxed">Entspannt · mehr Zeit vor Ort</option><option value="balanced">Ausgewogen</option><option value="active">Aktiv · häufigere Ortswechsel</option></select>
+   </section>
+   <section class="sheet-section">
+    <fieldset class="interest-chips"><legend>Was interessiert dich?</legend><label><input type="checkbox" name="interest" value="culture"><span>Kultur</span></label><label><input type="checkbox" name="interest" value="nature"><span>Natur</span></label><label><input type="checkbox" name="interest" value="onsen"><span>Onsen</span></label><label><input type="checkbox" name="interest" value="quiet"><span>Abseits der Klassiker</span></label></fieldset>
+    <p class="field-hint">Ausgewählte Interessen erscheinen in der Ortsliste zuerst.</p>
+   </section>
+   <details class="sheet-more">
+    <summary>Budget, Ankunfts- und Abreiseort</summary>
+    <label>Budgetrahmen gesamt in CHF<input id="budgetPreference" type="number" min="0" max="10000000" step="1" placeholder="Noch offen" inputmode="numeric"></label>
+    <label>Ankunftsort in Japan<select id="arrivalPlacePreference"><option value="">Noch offen</option></select></label>
+    <label>Abreiseort in Japan<select id="departurePlacePreference"><option value="">Noch offen</option></select></label>
+    <p class="field-hint">Ein Planungsrahmen. Internationale Flüge und Hotelwege separat planen.</p>
+   </details>
+   <button class="sr-only" type="submit" tabindex="-1">Vorlieben übernehmen</button>
+  </form>
+  <label class="switch-row motion-preference"><span><strong>Animationen reduzieren</strong><small>Gilt für dieses Gerät. Die Systemeinstellung wird zusätzlich berücksichtigt.</small></span><input type="checkbox" id="reduceMotion" role="switch"></label>
+ </div>
+ <footer class="sheet-actions"><button class="button outline" data-close type="button">Abbrechen</button><button class="button dark" id="tripApply" type="button">Übernehmen</button></footer>
+</dialog>
+
+<dialog id="welcomeDialog" class="welcome-dialog sheet" aria-labelledby="welcomeTitle">
+ <div class="welcome-hero" aria-hidden="true"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Kyoto%2C_Japan_%2849667780482%29.jpg/960px-Kyoto%2C_Japan_%2849667780482%29.jpg" alt="" referrerpolicy="no-referrer" decoding="async"></div>
+ <div class="sheet-body">
+  <p class="eyebrow">旅 tabi · Japan-Reiseplaner</p>
+  <h2 id="welcomeTitle">Japan, in deinem Tempo.</h2>
+  <p class="sheet-intro">Ein paar besondere Orte, und Zeit, sie wirklich zu erleben.</p>
+  <ol class="welcome-steps">
+   <li><svg class="i"><use href="#i-compass"/></svg><div><strong>Entdecken</strong><span>Orte nach Interessen finden</span></div></li>
+   <li><svg class="i"><use href="#i-route"/></svg><div><strong>Route</strong><span>Reihenfolge und Nächte festlegen</span></div></li>
+   <li><svg class="i"><use href="#i-bed"/></svg><div><strong>Aufenthalte</strong><span>Tage und Unterkünfte gestalten</span></div></li>
+  </ol>
+ </div>
+ <footer class="sheet-actions stacked"><button class="button primary" id="welcomeDemo" type="button">Mit Beispielroute starten</button><button class="button outline" id="welcomeEmpty" type="button">Mit leerer Route beginnen</button></footer>
+</dialog>
+
+<dialog id="importDialog" class="import-dialog sheet" aria-labelledby="importTitle">
+ <button class="dialog-close icon-button" data-close aria-label="Schließen"><svg class="i"><use href="#i-x"/></svg></button>
+ <div class="sheet-body"><p class="eyebrow">Geteilte Route</p><h2 id="importTitle">Diese Route übernehmen?</h2><div id="importSummary"></div><p class="field-hint">Deine aktuelle Route wird ersetzt. Rückgängig ist danach möglich.</p></div>
+ <footer class="sheet-actions"><button class="button outline" data-close type="button">Behalten, was ich habe</button><button class="button primary" id="importApply" type="button">Route übernehmen</button></footer>
+</dialog>
+
+<dialog id="notesDialog" class="notes-dialog sheet" aria-labelledby="notesTitle">
+ <button class="dialog-close icon-button" data-close aria-label="Schließen"><svg class="i"><use href="#i-x"/></svg></button>
+ <div class="sheet-body">
+  <h2 id="notesTitle">Datenquellen &amp; Hinweise</h2>
+  <ul class="notes-list">
+   <li><strong>Klima</strong> Historische Normalwerte der Japan Meteorological Agency (1991–2020). Keine Wetterprognose.</li>
+   <li><strong>Andrang</strong> Begründete Schätzung aus Saison, Feiertagen und Festivals, keine Messung.</li>
+   <li><strong>Transfers</strong> Orientierung ohne Warte- und Umstiegszeiten. Fahrpläne vor der Reise prüfen.</li>
+   <li><strong>Festivals</strong> Termine folgen dem angegebenen Quellenstatus; vor Buchung prüfen.</li>
+   <li><strong>Karte</strong> Japan-Kontur: Natural Earth, Public Domain. Verbindungen schematisch.</li>
+   <li><strong>Fotos</strong> Wikimedia Commons; Bildquelle und Lizenz stehen in den Ortsdetails.</li>
+  </ul>
+  <p class="field-hint">tabi ist ein interaktiver Prototyp. Hotels werden ausgewählt, nicht gebucht.</p>
+ </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<p class="sr-only" id="navAnnouncer" aria-live="polite"></p>
+<section id="printContent" class="print-content" aria-label="Reiseplan Druckansicht"></section>
+
+<script defer src="photos.js"></script>
+<script defer src="destinations.js"></script>
+<script defer src="catalogue-photos.js"></script>
+<script defer src="activity-info.js"></script>
+<script defer src="climate-data.js"></script>
+<script defer src="events-data.js"></script>
+<script defer src="holidays-data.js"></script>
+<script defer src="season-engine.js"></script>
+<script defer src="services.js"></script>
+<script defer src="transfers-data.js"></script>
+<script defer src="detail-experience.js"></script>
+<script defer src="season-view.js"></script>
+<script defer src="stay-planner.js"></script>
+<script defer src="app.js"></script>
+<script defer src="map.js"></script>
+<script defer src="ui.js"></script>
+</body>
+</html>
